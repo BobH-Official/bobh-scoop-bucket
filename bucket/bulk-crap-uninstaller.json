@@ -32,10 +32,7 @@
     "homepage": "https://www.bcuninstaller.com/",
     "license": "Apache-2.0",
     "persist": [
-        [
-            "BCUninstaller.settings",
-            "BCUninstaller.settings"
-        ]
+        "BCUninstaller.settings"
     ],
     "pre_install": [
         "ensure \"$persist_dir\" | Out-Null",
