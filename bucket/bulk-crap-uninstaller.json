@@ -1,52 +1,45 @@
 {
-    "architecture": {
-        "32bit": {
-            "extract_dir": "win-x86"
-        },
-        "64bit": {
-            "extract_dir": "win-x64"
-        }
+  "architecture": {
+    "32bit": {
+      "extract_dir": "win-x86"
     },
-    "autoupdate": {
-        "hash": {
-            "regex": "$basename.*?\"sha1\":\"$sha1",
-            "url": "https://sourceforge.net/projects/bulk-crap-uninstaller/files/v$matchTag/"
-        },
-        "url": "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v$matchTag/BCUninstaller_$version_portable.zip"
+    "64bit": {
+      "extract_dir": "win-x64"
+    }
+  },
+  "autoupdate": {
+    "hash": {
+      "regex": "$basename.*?\"sha1\":\"$sha1",
+      "url": "https://sourceforge.net/projects/bulk-crap-uninstaller/files/v$matchTag/"
     },
-    "bin": [
-        "BCU-console.exe",
-        "BCUninstaller.exe",
-        "OculusHelper.exe",
-        "SteamHelper.exe",
-        "StoreAppHelper.exe",
-        "UninstallerAutomatizer.exe"
-    ],
-    "checkver": {
-        "jsonpath": "$..browser_download_url",
-        "regex": "download/v(?<tag>[\\d.]+)/BCUninstaller_([\\d.]+)_portable.zip",
-        "url": "https://api.github.com/repositories/64677873/releases/latest"
-    },
-    "description": "Bulk program uninstaller with advanced automation",
-    "hash": "sha1:ce8ad309eda40e523d7d285aade8d2b3c0a2596a",
-    "homepage": "https://www.bcuninstaller.com/",
-    "license": "Apache-2.0",
-    "persist": [
-        "BCUninstaller.settings"
-    ],
-    "pre_install": [
-        "$cfg = Join-Path $persist_dir 'BCUninstaller.settings'",
-        "if (-not (Test-Path $cfg)) { New-Item -ItemType File -Path $cfg | Out-Null }"
-    ],
-    "shortcuts": [
-        [
-            "BCUninstaller.exe",
-            "Bulk Crap Uninstaller"
-        ]
-    ],
-    "uninstaller": {
-        "script": "Copy-Item \"$dir\\BCUninstaller.settings\" \"$persist_dir\" -ErrorAction 'SilentlyContinue' -Force"
-    },
-    "url": "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v5.9/BCUninstaller_5.9.0_portable.zip",
-    "version": "5.9.0"
+    "url": "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v$matchTag/BCUninstaller_$version_portable.zip"
+  },
+  "bin": [
+    "BCU-console.exe",
+    "BCUninstaller.exe",
+    "OculusHelper.exe",
+    "SteamHelper.exe",
+    "StoreAppHelper.exe",
+    "UninstallerAutomatizer.exe"
+  ],
+  "checkver": {
+    "jsonpath": "$..browser_download_url",
+    "regex": "download/v(?<tag>[\\d.]+)/BCUninstaller_([\\d.]+)_portable.zip",
+    "url": "https://api.github.com/repositories/64677873/releases/latest"
+  },
+  "description": "Bulk program uninstaller with advanced automation",
+  "hash": "sha1:ce8ad309eda40e523d7d285aade8d2b3c0a2596a",
+  "homepage": "https://www.bcuninstaller.com/",
+  "license": "Apache-2.0",
+  "persist": ["BCUninstaller.settings"],
+  "pre_install": [
+    "$cfg = Join-Path $persist_dir 'BCUninstaller.settings'",
+    "if (-not (Test-Path $cfg)) { New-Item -ItemType File -Path $cfg | Out-Null }"
+  ],
+  "shortcuts": [["BCUninstaller.exe", "Bulk Crap Uninstaller"]],
+  "uninstaller": {
+    "script": "Copy-Item \"$dir\\BCUninstaller.settings\" \"$persist_dir\" -ErrorAction 'SilentlyContinue' -Force"
+  },
+  "url": "https://github.com/Klocman/Bulk-Crap-Uninstaller/releases/download/v5.9/BCUninstaller_5.9.0_portable.zip",
+  "version": "5.9.0"
 }
