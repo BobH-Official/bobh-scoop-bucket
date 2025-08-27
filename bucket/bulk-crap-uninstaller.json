@@ -35,8 +35,8 @@
         "BCUninstaller.settings"
     ],
     "pre_install": [
-        "ensure \"$persist_dir\" | Out-Null",
-        "Copy-Item \"$persist_dir\\BCUninstaller.settings\" \"$dir\" -ErrorAction 'SilentlyContinue'"
+        "$cfg = Join-Path $persist_dir 'BCUninstaller.settings'",
+        "if (-not (Test-Path $cfg)) { New-Item -ItemType File -Path $cfg | Out-Null }"
     ],
     "shortcuts": [
         [
