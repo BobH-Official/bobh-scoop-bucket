@@ -3,11 +3,13 @@
     "architecture": {
         "32bit": {
             "extract_dir": "chrome-win32",
-            "url": "https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.46/win32/chrome-win32.zip"
+            "hash": "fff536892f03cfab6c643a889d2d5a61170605120706d656765dc491175bc66f",
+            "url": "https://storage.googleapis.com/chrome-for-testing-public/147.0.7727.24/win32/chrome-win32.zip"
         },
         "64bit": {
             "extract_dir": "chrome-win64",
-            "url": "https://storage.googleapis.com/chrome-for-testing-public/145.0.7632.46/win64/chrome-win64.zip"
+            "hash": "22d9f6baf54f755ccf5843f8e6ad4ad6e0ba10d11092c574df9e8f97ce55369e",
+            "url": "https://storage.googleapis.com/chrome-for-testing-public/147.0.7727.24/win64/chrome-win64.zip"
         }
     },
     "autoupdate": {
@@ -50,5 +52,5 @@
             "--user-data-dir=\"$dir\\User Data\" --no-default-browser-check --no-first-run"
         ]
     ],
-    "version": "145.0.7632.46"
+    "version": "147.0.7727.24"
 }
