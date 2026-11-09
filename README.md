@@ -16,6 +16,7 @@ scoop install bobh-scoop-bucket/<manifest>
 
 | Manifest | Description |
 | --- | --- |
+| [`astra-gate`](bucket/astra-gate.json) | Local AI gateway that relays requests between AI clients and providers, with protocol conversion, usage billing and privacy guardrails. |
 | [`bun-canary`](bucket/bun-canary.json) | Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one. |
 | [`google-chrome-for-testing`](bucket/google-chrome-for-testing.json) | Google Chrome for Testing, a new Chrome flavor that specifically targets web app testing and automation use cases. |
 
